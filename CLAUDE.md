@@ -155,8 +155,8 @@ ReadingManagementApp/
 |---|--------|------|
 | 1-1 | ✅ docker-compose.yml作成 | frontend / backend / db の3コンテナ定義、app-network作成、postgres-dataボリューム定義 |
 | 1-2 | ✅ backend用Dockerfile作成 | python:3.11-slim ベース、requirements.txt インストール、manage.py 起動設定 |
-| 1-3 | frontend用Dockerfile作成 | node:18-alpine ベース、npm install、開発サーバー起動設定 |
-| 1-4 | Djangoプロジェクト初期化 | `django-admin startproject config .` でプロジェクト作成、settings.pyでPostgreSQL接続設定 |
+| 1-3 | ✅ frontend用Dockerfile作成 | node:18-alpine ベース、npm install、開発サーバー起動設定 |
+| 1-4 | ✅ Djangoプロジェクト初期化 | `django-admin startproject config .` でプロジェクト作成、settings.pyでPostgreSQL接続設定 |
 | 1-5 | booksアプリ作成 | `python manage.py startapp books`、INSTALLED_APPSへの登録 |
 | 1-6 | Bookモデル定義 | isbn / title / cover_image_url / created_at カラム定義 |
 | 1-7 | マイグレーション実行 | makemigrations → migrate でテーブル作成 |
