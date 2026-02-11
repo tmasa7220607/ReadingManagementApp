@@ -1,0 +1,136 @@
+/* リセット・ベース */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+  background-color: #fdf6e3;
+  color: #5a4a3a;
+  min-height: 100vh;
+}
+
+/* 共通レイアウト */
+.page {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  color: #e8836b;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* 共通ボタン */
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  padding: 18px 24px;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-pink {
+  background-color: #f8b4b4;
+  color: #5a4a3a;
+}
+
+.btn-blue {
+  background-color: #a8d8ea;
+  color: #5a4a3a;
+}
+
+.btn-green {
+  background-color: #b5e8b5;
+  color: #5a4a3a;
+}
+
+.btn-yellow {
+  background-color: #fde68a;
+  color: #5a4a3a;
+}
+
+.btn-gray {
+  background-color: #d1d5db;
+  color: #5a4a3a;
+}
+
+.btn-red {
+  background-color: #f8b4b4;
+  color: #a04040;
+}
+
+/* 共通入力フォーム */
+.input {
+  width: 100%;
+  max-width: 320px;
+  padding: 14px 16px;
+  border: 2px solid #d1c4b0;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #a8d8ea;
+}
+
+/* メッセージ */
+.message {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 16px 0;
+}
+
+.message-error {
+  color: #c05050;
+}
+
+.message-success {
+  color: #508050;
+}
+
+/* レスポンシブ */
+@media (min-width: 768px) {
+  .page {
+    max-width: 600px;
+    padding: 40px 24px;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .btn {
+    max-width: 400px;
+    font-size: 1.5rem;
+    padding: 22px 28px;
+  }
+
+  .input {
+    max-width: 400px;
+    font-size: 1.3rem;
+  }
+}
