@@ -7,9 +7,8 @@ logger = logging.getLogger(__name__)
 
 API_TIMEOUT = 5
 
-# NDLサーチ OpenSearch APIの名前空間
+# NDLサーチ OpenSearch APIの名前空間（RSS 2.0形式）
 NS = {
-    'rss': 'http://purl.org/rss/1.0/',
     'dc': 'http://purl.org/dc/elements/1.1/',
     'openSearch': 'http://a9.com/-/spec/opensearchrss/1.0/',
 }
@@ -29,11 +28,12 @@ def fetch_book_from_ndl(isbn):
         logger.warning('NDL API returned invalid XML for ISBN: %s', isbn)
         return None
 
-    item = root.find('.//rss:item', NS)
+    # RSS 2.0形式: channel/item（名前空間なし）
+    item = root.find('.//item')
     if item is None:
         return None
 
-    title_elem = item.find('rss:title', NS)
+    title_elem = item.find('title')
     title = title_elem.text if title_elem is not None else None
     if not title:
         return None
