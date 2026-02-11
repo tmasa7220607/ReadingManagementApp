@@ -104,7 +104,7 @@ ReadingManagementApp/
 
 | API | エンドポイント | 用途 |
 |-----|---------------|------|
-| NDLサーチ OpenSearch | `https://iss.ndl.go.jp/api/opensearch` | ISBN→書籍情報（メイン） |
+| NDLサーチ OpenSearch | `https://ndlsearch.ndl.go.jp/api/opensearch` | ISBN→書籍情報（メイン） |
 | Google Books API | `https://www.googleapis.com/books/v1/volumes` | 表紙画像取得（フォールバック） |
 
 ### データモデル（Bookテーブル）
@@ -166,16 +166,16 @@ ReadingManagementApp/
 
 | # | タスク | 詳細 |
 |---|--------|------|
-| 2-1 | Django REST Framework導入 | requirements.txtへの追加、settings.py設定 |
-| 2-2 | Bookシリアライザー作成 | BookSerializer定義（全フィールド） |
-| 2-3 | NDLサーチAPI連携サービス作成 | ISBNでNDL OpenSearch APIを呼び出し、XMLレスポンスからタイトル・表紙画像URLを抽出 |
-| 2-4 | Google Books API連携サービス作成 | ISBNでGoogle Books APIを呼び出し、表紙画像URLを取得するフォールバック処理 |
-| 2-5 | 書籍登録APIエンドポイント作成 | `POST /api/books/` — ISBN受取→外部API検索→DB保存→結果返却 |
-| 2-6 | 書籍一覧APIエンドポイント作成 | `GET /api/books/` — 並び順パラメータ対応（登録日時順 / タイトル50音順） |
-| 2-7 | 書籍削除APIエンドポイント作成 | `DELETE /api/books/{id}/` — 指定IDの書籍を削除 |
-| 2-8 | 書籍検索APIエンドポイント作成 | `GET /api/books/search/?q=` — タイトル部分一致検索 |
-| 2-9 | エラーハンドリング実装 | APIタイムアウト(5秒)、書籍未発見、ネットワークエラー、DB エラーの各ケース |
-| 2-10 | CORS設定 | django-cors-headers導入、フロントエンド(port 3000)からのアクセス許可 |
+| 2-1 | ✅ Django REST Framework導入 | requirements.txtへの追加、settings.py設定 |
+| 2-2 | ✅ Bookシリアライザー作成 | BookSerializer定義（全フィールド） |
+| 2-3 | ✅ NDLサーチAPI連携サービス作成 | ISBNでNDL OpenSearch APIを呼び出し、XMLレスポンスからタイトル・表紙画像URLを抽出 |
+| 2-4 | ✅ Google Books API連携サービス作成 | ISBNでGoogle Books APIを呼び出し、表紙画像URLを取得するフォールバック処理 |
+| 2-5 | ✅ 書籍登録APIエンドポイント作成 | `POST /api/books/` — ISBN受取→外部API検索→DB保存→結果返却 |
+| 2-6 | ✅ 書籍一覧APIエンドポイント作成 | `GET /api/books/` — 並び順パラメータ対応（登録日時順 / タイトル50音順） |
+| 2-7 | ✅ 書籍削除APIエンドポイント作成 | `DELETE /api/books/{id}/` — 指定IDの書籍を削除 |
+| 2-8 | ✅ 書籍検索APIエンドポイント作成 | `GET /api/books/search/?q=` — タイトル部分一致検索 |
+| 2-9 | ✅ エラーハンドリング実装 | APIタイムアウト(5秒)、書籍未発見、ネットワークエラー、DB エラーの各ケース |
+| 2-10 | ✅ CORS設定 | django-cors-headers導入、フロントエンド(port 3000)からのアクセス許可 |
 
 ### Phase 3: フロントエンド開発
 
@@ -212,3 +212,7 @@ ReadingManagementApp/
 | 5-3 | 本番ビルド設定 | フロントエンドのプロダクションビルド対応 |
 | 5-4 | データ永続化確認 | コンテナ再起動後のデータ保持確認 |
 | 5-5 | 起動・停止手順の最終確認 | `docker-compose up/down` の動作確認、README作成 |
+
+---
+
+完了したタスクは更新する
